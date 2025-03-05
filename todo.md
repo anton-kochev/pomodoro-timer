@@ -2,18 +2,18 @@
 
 ## Project Setup
 
-- [ ] Initialize Rust project with Cargo
-- [ ] Set up initial project structure
-- [ ] Configure `Cargo.toml` with dependencies
-- [ ] Create `.gitignore`
-- [ ] Initialize git repository
-- [ ] Write initial README.md
+- [x] Initialize Rust project with Cargo
+- [x] Set up initial project structure
+- [x] Configure `Cargo.toml` with dependencies
+- [x] Create `.gitignore`
+- [x] Initialize git repository
+- [x] Write initial README.md
 
 ## Configuration Management
 
-- [ ] Create configuration structs
-- [ ] Implement JSON serialization with `serde`
-- [ ] Add default configuration loading
+- [x] Create configuration structs
+- [x] Implement JSON serialization with `serde`
+- [x] Add default configuration loading
 - [ ] Create configuration file reading/writing functions
 - [ ] Implement configuration validation
 - [ ] Write unit tests for configuration module
