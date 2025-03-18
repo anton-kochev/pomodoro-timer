@@ -4,10 +4,10 @@ use std::fs;
 
 #[derive(Deserialize)]
 pub struct Config {
-    pub pomodoro_length: u16,
-    pub short_break_length: u16,
-    pub long_break_length: u16,
-    pub intervals_before_long_break: u16,
+    pub pomodoro_length: u64,
+    pub short_break_length: u64,
+    pub long_break_length: u64,
+    pub intervals_before_long_break: u64,
 }
 
 impl Config {
@@ -20,10 +20,18 @@ impl Config {
         }
     }
 
-    pub fn init(path: &str) -> Self {
+    pub fn load(path: &str) -> Self {
         match fs::read(path) {
-            Ok(contents) => serde_json::from_slice(&contents).unwrap_or_else(|_| Config::new()),
-            Err(..) => Config::new(),
+            Ok(contents) => {
+                serde_json::from_slice(&contents).unwrap_or_else(|_| Default::default())
+            }
+            Err(..) => Default::default(),
         }
+    }
+}
+
+impl Default for Config {
+    fn default() -> Self {
+        Config::new()
     }
 }

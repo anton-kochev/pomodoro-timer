@@ -14,15 +14,15 @@
 - [x] Create configuration structs
 - [x] Implement JSON serialization with `serde`
 - [x] Add default configuration loading
-- [ ] Create configuration file reading/writing functions
+- [x] Create configuration file reading/writing functions
 - [ ] Implement configuration validation
 - [ ] Write unit tests for configuration module
 - [ ] Add error handling for configuration
 
 ## Timer Core Logic
 
-- [ ] Design Timer state enum
-- [ ] Create Timer struct
+- [x] Design Timer state enum
+- [x] Create Timer struct
 - [ ] Implement timer start method
 - [ ] Add pause functionality
 - [ ] Create reset mechanism
