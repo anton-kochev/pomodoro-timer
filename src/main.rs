@@ -1,19 +1,11 @@
-use std::io::{self, Read};
-use std::sync::atomic::{AtomicBool, Ordering};
-use std::sync::Arc;
-use std::thread;
-use std::time::{Duration, Instant};
-
 mod app;
+mod commands;
 mod config;
 mod screens;
+mod timer;
 
 use app::PomodoroApp;
 
-fn main() -> io::Result<()> {
-    let mut app = PomodoroApp::new();
-
-    app.run();
-
-    Ok(())
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+    PomodoroApp::new().run()
 }

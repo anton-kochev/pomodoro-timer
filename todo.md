@@ -23,30 +23,30 @@
 
 - [x] Design Timer state enum
 - [x] Create Timer struct
-- [ ] Implement timer start method
+- [x] Implement timer start method
 - [ ] Add pause functionality
 - [ ] Create reset mechanism
 - [ ] Develop skip session feature
 - [ ] Implement Pomodoro/break transition logic
 - [ ] Add Pomodoro count tracking
-- [ ] Create async timer management
+- [x] Create async timer management
 - [ ] Write comprehensive unit tests
 - [ ] Implement error handling for timer states
 
 ## CLI Command Interface
 
-- [ ] Set up `clap` for CLI parsing
-- [ ] Define CLI command structure
-- [ ] Implement `start` command
-- [ ] Implement `pause` command
-- [ ] Implement `reset` command
-- [ ] Implement `skip` command
-- [ ] Implement `status` command
-- [ ] Create `config` subcommands
-- [ ] Add comprehensive help text
-- [ ] Implement input validation
-- [ ] Write integration tests for CLI commands
-- [ ] Add error handling for invalid inputs
+- [-] Set up `clap` for CLI parsing
+- [-] Define CLI command structure
+- [-] Implement `start` command
+- [-] Implement `pause` command
+- [-] Implement `reset` command
+- [-] Implement `skip` command
+- [-] Implement `status` command
+- [-] Create `config` subcommands
+- [-] Add comprehensive help text
+- [-] Implement input validation
+- [-] Write integration tests for CLI commands
+- [-] Add error handling for invalid inputs
 
 ## Notification System
 

@@ -1,3 +1,3 @@
-pub mod home;
+pub mod home_screen;
 pub mod screen;
-pub mod timer;
+pub mod timer_screen;

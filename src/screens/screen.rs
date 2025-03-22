@@ -1,16 +1,21 @@
-use super::home::Home;
-use super::timer::Timer;
+use crate::commands::command::Command;
+
+use super::{home_screen::HomeScreen, timer_screen::TimerScreen};
 
 pub enum Screen {
-    Home(Home),
-    Timer(Timer),
+    Home(HomeScreen),
+    Timer(TimerScreen),
 }
 
 impl Screen {
     pub fn render(&self) {
         match self {
-            Screen::Home(home) => home.render(),
-            Screen::Timer(timer) => timer.render(),
+            Screen::Home(home) => {
+                home.render();
+            }
+            Screen::Timer(timer) => {
+                timer.render();
+            }
         }
     }
 
@@ -28,7 +33,7 @@ impl Screen {
         }
     }
 
-    pub fn execute(&self) -> Option<Screen> {
+    pub fn execute(&self) -> Option<Command> {
         match self {
             Screen::Home(home) => home.execute(),
             Screen::Timer(..) => None,
