@@ -20,8 +20,8 @@ impl Config {
         }
     }
 
-    pub fn load(path: &str) -> Self {
-        match fs::read(path) {
+    pub fn initialize() -> Self {
+        match fs::read("config.json") {
             Ok(contents) => {
                 serde_json::from_slice(&contents).unwrap_or_else(|_| Default::default())
             }

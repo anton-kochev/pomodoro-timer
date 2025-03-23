@@ -1,4 +1,4 @@
-use crate::commands::command::Command;
+use crate::commands::Command;
 
 pub struct HomeScreen {
     current_option: usize,
@@ -39,9 +39,9 @@ impl HomeScreen {
     pub fn execute(&self) -> Option<Command> {
         match self.current_option {
             // Run timer
-            0 => Some(Command::StartTimer(())),
+            0 => Some(Command::StartTimer),
             // Configure
-            1 => Some(Command::Configure(())),
+            1 => Some(Command::Configure),
             _ => None,
         }
     }

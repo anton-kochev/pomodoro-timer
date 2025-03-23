@@ -25,7 +25,7 @@
 - [x] Create Timer struct
 - [x] Implement timer start method
 - [ ] Add pause functionality
-- [ ] Create reset mechanism
+- [x] Create reset mechanism
 - [ ] Develop skip session feature
 - [ ] Implement Pomodoro/break transition logic
 - [ ] Add Pomodoro count tracking

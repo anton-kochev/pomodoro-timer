@@ -1,17 +1,26 @@
-use crate::{
-    config::Config,
-    timer::{Timer, TimerResult},
-};
+use std::rc::Rc;
+
+use crate::commands::Command;
+use crate::config::Config;
+use crate::timer::{Timer, TimerResult};
 
 pub struct TimerScreen {
+    config: Rc<Config>,
     timer: Timer,
 }
 
 impl TimerScreen {
-    pub fn new(config: &Config) -> Self {
+    pub fn new(config: Rc<Config>) -> Self {
+        let duration = config.pomodoro_length;
+
         TimerScreen {
-            timer: Timer::new(config.pomodoro_length * 60),
+            config,
+            timer: Timer::new(duration * 60),
         }
+    }
+
+    pub fn execute(&self) -> Option<Command> {
+        Some(Command::StopTimer)
     }
 
     pub fn render(&self) {
@@ -22,7 +31,7 @@ impl TimerScreen {
         } = self.timer.elapsed();
 
         ncurses::mvprintw(1, 0, TimerScreen::format_timer(minutes, seconds).as_str()).unwrap();
-        ncurses::mvprintw(2, 0, "Press SPACE to <stop>...").unwrap();
+        ncurses::mvprintw(2, 0, "Press ENTER to <stop>...").unwrap();
         ncurses::refresh();
     }
 
